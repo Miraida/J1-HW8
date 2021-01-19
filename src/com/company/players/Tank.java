@@ -20,9 +20,12 @@ public class Tank extends Hero {
                       isHeroALife += 10;
                   }
                }
-              this.setHealth(this.getHealth() - isHeroALife);
+               if (this.getHealth() - isHeroALife < 0)
+                   this.setHealth(0);
+               else this.setHealth(this.getHealth() - isHeroALife);
+
               if (isHeroALife != 0)
-              System.out.println("Tank get damage from Boss and saved "+(isHeroALife/10-1) +"  heroes");
+              System.out.println("Tank get damage from Boss and save "+(isHeroALife/10-1) +"  heroes health to 10");
             }
         }
     }
